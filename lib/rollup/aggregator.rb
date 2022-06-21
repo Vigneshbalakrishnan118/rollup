@@ -6,6 +6,8 @@ class Rollup
 
     def rollup(name, column: nil, interval: "day", dimension_names: nil, time_zone: nil, current: nil, last: nil, clear: false, range: nil, &block)
       raise "Name can't be blank" if name.blank?
+      
+      p "herererere in aggregator"
 
       column ||= @klass.rollup_column || :created_at
       # Groupdate 6+ validates, but keep this for now for additional safety
